@@ -19,6 +19,7 @@ Snakemake <- setClass(
 
 parse_snakemake_all_rules <- function(snakefile_path = "Snakefile"){
   rules <- get_all_rules(snakefile_path)
+  names(rules) <- rules
 
   snake_obj_list <- lapply(rules, function(rule_name){
     tryCatch({
