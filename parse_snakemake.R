@@ -22,7 +22,7 @@ parse_snakemake_all_rules <- function(snakefile_path = "Snakefile"){
 
   snake_obj_list <- lapply(rules, function(rule_name){
     tryCatch({
-      parse_snakemake_single_rule(rule_name, "./Snakefile_old")
+      parse_snakemake_single_rule(rule_name, snakefile_path)
     }, error = function(e) {
       # Code to handle the error
       cat(paste("An error occurred while parsing rule", rule_name, ":"), conditionMessage(e), "\n")
